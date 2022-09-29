@@ -1,0 +1,314 @@
+
+
+
+                                                     <!-- //SIMPLE CLASS // -->
+
+  <script>
+  	console.log(">>> simple class <<<<<.")
+  	class Demo
+  	{
+  		a=10;
+  		b=20;
+  	}
+  	var d= new Demo();
+  	console.log(d);
+  	console.log(d.a);
+  	console.log(d.b);
+
+  </script>
+
+
+                                                   <!-- // DEFAULT CONSTRUCTOR // -->
+
+  <script>
+  	console.log(">>>> Default Constructor <<<<");
+  	class Damon
+  	{
+  		constructor()
+  		{
+  			console.log(" Default Constructor is running ....");
+  		}
+  	}
+  	new Damon();
+  	
+  </script>
+                                                          
+
+                                                          <!-- //PARAMETER CONSTRUCTOR // -->
+
+  <script>
+  	
+  	console.log(" >>>> Pramerter constructor");
+  	class Pdamon
+  	{
+  		constructor(n)
+  		{
+  			console.log("a is = " + 10*n);
+  			console.log("b is = " + 20*n);
+  		}
+  	}
+     new Pdamon(2);
+     new Pdamon(3);
+  </script>
+
+
+                                             <!-- // Using Property and constructor creates mess // -->
+
+<script>
+	class Mfalls
+	{
+		a=undefined;
+		b=undefined;
+
+		constructor()                                        //no output//
+		{
+			a=10;
+			b=20;
+		}
+	}
+       var d= new Mfalls
+       console.log(d.a);
+       console.log(d.b);
+</script>
+
+
+
+                                                         <!--  // THIS Keyword // -->
+   
+   
+   
+<script>
+	class Myfalls
+	{
+		constructor()
+		{
+			this.a=10;
+			this.b=20;
+		}
+	}
+	var d= new Myfalls
+	console.log(d.a);
+	console.log(d.b);
+</script>
+
+
+<script>
+  class Emp
+  {
+    constructor(eid,name)
+    {
+      this.eid=eid;
+      this.name=name;
+    }
+  }
+ var e=new Emp(101,"anita");
+ console.log(e.eid);
+ console.log(e.name);
+ var e1=new Emp(102,"ankita");
+ console.log(e1.eid);
+ console.log(e1.name);
+
+</script>
+
+
+
+                                            <!-- // REST Parameter // -->
+
+
+<script>
+   class emp
+   {
+    constructor(...n)
+    {
+      console.log(n);
+    }
+   }
+   var e=new emp();
+   var e1=new emp(5);
+   var e2=new emp(10,22);
+   var e3=new emp(89,56,"hi","anii");
+</script>
+
+
+                                         
+
+                                                <!-- //Member function or METHOD // -->
+
+
+
+<script>
+  class Empl
+  {
+    show()
+    {
+      console.log("METHOD is running...");
+    }
+  }
+  var e=new Empl();
+  e.show();
+  e.show();
+  e.show();
+  e.show();
+</script>
+
+
+
+                                                    <!--    //Overloading(rest) in METHOD // -->
+                                            
+
+<script>
+  class Emply
+  {
+    show(...n)
+    {
+      console.log(n);
+    }
+  }
+  var p=new Emply();
+  p.show(12,56);
+  p.show(34,90);
+</script>
+
+
+<script>
+  class Temo
+  {
+    factorial(n)
+    {
+      var f=1;
+      for(var i=1; i<=n;i++)
+      {
+        f=f*i;
+      }
+      return f;
+    }
+  }
+  var d= new Temo();
+  console.log(d.factorial(5));
+</script>
+
+
+                                               <!-- // RETURN KEYWORD // -->
+
+
+<script>
+  class Bemo
+  {
+    constructor()
+    {
+      return 10;
+    }
+  }
+  var d=new Bemo();
+  console.log(d);
+</script>
+
+
+                                                   <!-- // THIS Keyword // -->
+
+<script>
+  class Yemo
+     {
+      constructor(a,b)
+      {
+        this.a=a;
+        this.b=b;
+      }
+      show()
+      {
+        console.log(this.a + " " + this.b);
+      }
+     }
+   var d=new Yemo(10,20)
+   d.show();
+</script>
+
+
+                                                  <!-- // INHERITANCE //  -->
+
+
+<script src="C:\Users\anita\Desktop\FETanveer\JS\inheritance.js"></script>
+<script>
+   class Inheri extends Dummy
+   {
+    display()
+    {
+      console.log(" Display object inside Inheri class")
+    }
+   }
+   var d=new Inheri();
+   d.display();
+   d.show();
+</script>
+
+
+                                                   <!--  // Multi-level inheritance // -->
+
+
+ <script>
+  console.log("---->>>>> Multi-level inheritance  <<<<<<<----");
+   class Besa
+   {
+     welcome()
+     {
+      console.log("Welcome to Besa");
+     }
+   }
+   class Tummy extends Besa
+   {
+    show()
+    {
+      console.log("show in Tummy class");
+    }
+   }
+   class Wemo extends Tummy
+   {
+    display1()
+    {
+      console.log("display in wemo class")
+    }
+   }
+   var x=new Wemo()                            // always put the last class name here//
+   x.show();
+   x.welcome();
+   x.display1();
+ </script>
+
+
+
+                                      <!-- // Ambiguity problem // -->
+
+
+  <script>
+    console.log(" ------->> Ambiguity problem  <<---------")
+    class Ambi
+    {
+        prob()
+        {
+          console.log("prob object in Ambi class");
+        }
+    }
+    class Ambi1
+    {
+      prob1()
+      {
+        console.log("prob1 object in Ambi1 class");
+      }
+    }
+    class Ambi2 extends Ambi, Ambi1            // We cannot extend 2 classes in one class. ambiguity problem//
+    {
+      prob2()
+      {
+        console.log("prob2 object in Ambi2 class");
+      }
+    }
+
+  </script>
+
+
+
+
+
+
+
+
